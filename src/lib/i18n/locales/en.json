@@ -1,0 +1,127 @@
+{
+  "siteName": "Communize",
+  "tagline": "Cultivating the art and architecture of belonging",
+  "nav": {
+    "home": "Home",
+    "scales": "Scales",
+    "toolkit": "Toolkit",
+    "library": "Library",
+    "knowledge": "Knowledge",
+    "about": "About"
+  },
+  "scales": {
+    "inner": "Inner Commons",
+    "relational": "Relational Commons",
+    "societal": "Societal Commons",
+    "planetary": "Planetary Commons"
+  },
+  "hero": {
+    "title": "From Isolation to Communion",
+    "subtitle": "Exploring the process of communizing—building community and creating the commons",
+    "cta": "Begin Exploring"
+  },
+  "manifesto": {
+    "quote": "We live in an age of profound isolation—despite being more \"connected\" than ever. Communize is an invitation to participate in the great work of our time: weaving the social fabric back together.",
+    "body": "This is a call to move from a world of \"me\" to a world of \"we\"—not by losing the self, but by finding it in a wider context of belonging and mutual care. It is both ancient wisdom and urgent necessity: the recognition that we flourish together, or not at all."
+  },
+  "scalesSection": {
+    "title": "The Four Scales of Communizing",
+    "subtitle": "From the inner landscape of the self to the planetary commons, we explore how belonging manifests at every level of existence.",
+    "inner": {
+      "description": "Integration within—communizing the psyche, the parts of self, and the inner ecology of belonging."
+    },
+    "relational": {
+      "description": "Two-person and small-group communizing—relationships as shared fields of belonging."
+    },
+    "societal": {
+      "description": "Communities, cooperatives, neighborhoods, and local economies—building resilient structures of mutual aid."
+    },
+    "planetary": {
+      "description": "The global dimension—digital commons, ecological stewardship, and planetary governance as shared responsibility."
+    }
+  },
+  "trilogy": {
+    "title": "A Complete Map of Human Flourishing",
+    "subtitle": "Communize completes a trilogy of explorations: from awakening to understanding to embodying in community.",
+    "nondualize": {
+      "subtitle": "Being",
+      "description": "Understanding the unified nature of reality and awakening to the wholeness that precedes all division.",
+      "cta": "Explore Nondualize →"
+    },
+    "spiralize": {
+      "subtitle": "Becoming",
+      "description": "Mapping the developmental stages of consciousness and understanding how we evolve and transform.",
+      "cta": "Explore Spiralize →"
+    },
+    "communize": {
+      "subtitle": "Belonging",
+      "description": "Manifesting collective wisdom in social structures and weaving the fabric of genuine community.",
+      "youAreHere": "You are here"
+    }
+  },
+  "cta": {
+    "title": "Join the Process",
+    "description": "This project thrives on collective intelligence. All content is open source and built collaboratively. Your insights, experiences, and contributions help expand the commons.",
+    "github": "Contribute on GitHub",
+    "contact": "Get in Touch"
+  },
+  "footer": {
+    "license": "Content shared under CC BY-SA 4.0",
+    "sisterSites": "Sister Sites",
+    "contact": "Contact",
+    "copyright": "© {year} Communize. Open source and built with intention."
+  },
+  "about": {
+    "title": "About Communize",
+    "subtitle": "Weaving the social fabric back together",
+    "intro": [
+      "Communize is a free, open resource for exploring the art and architecture of belonging—how we create, sustain, and evolve commons at every scale of life.",
+      "This site bridges inner integration, developmental understanding, and systemic design. We investigate communizing as both verb and vision: the active process of building shared ownership, collective responsibility, and deep relational bonds.",
+      "From the psychology of belonging to the structures of cooperation, from ancient commons to digital cooperatives, we study and share models that enable people to manage shared resources and flourish together."
+    ],
+    "philosophy": {
+      "title": "Our Philosophy",
+      "points": [
+        "Completely free and open source—no paywalls, no tracking",
+        "Static and simple—just ideas and resources",
+        "Balancing theory with practice",
+        "Honest about tensions and challenges",
+        "Integration across scales—inner to planetary"
+      ]
+    },
+    "ecosystem": {
+      "title": "Part of an Ecosystem",
+      "description": "Communize is part of a family of sites exploring human consciousness and social evolution:",
+      "nondualize": {
+        "subtitle": "Being",
+        "description": "Understanding the unified nature of reality and awakening to wholeness.",
+        "link": "Visit Nondualize.org"
+      },
+      "spiralize": {
+        "subtitle": "Becoming", 
+        "description": "Mapping developmental stages of consciousness and values evolution.",
+        "link": "Visit Spiralize.org"
+      },
+      "communize": {
+        "subtitle": "Belonging",
+        "description": "Building community and creating commons at every scale.",
+        "link": "You are here"
+      },
+      "ggf": {
+        "subtitle": "Systemizing",
+        "description": "Designing governance frameworks for planetary coordination.",
+        "link": "Visit GlobalGovernanceFrameworks.org"
+      }
+    },
+    "author": {
+      "title": "About the Creator",
+      "text": "Communize is created by Björn Kenneth Holmström, who explores the intersection of consciousness development, social systems, and collective wisdom.",
+      "link": "Visit personal website"
+    },
+    "openSource": {
+      "title": "Open Source & Collaborative",
+      "text": "This project thrives on collective intelligence. All content is licensed under Creative Commons (CC BY-SA 4.0) and the code is MIT licensed. Contributions are welcome!",
+      "github": "View on GitHub"
+    }
+  }
+}

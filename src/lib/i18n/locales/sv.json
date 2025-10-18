@@ -1,0 +1,127 @@
+{
+  "siteName": "Communize",
+  "tagline": "Att odla konsten och arkitekturen av tillhörighet",
+  "nav": {
+    "home": "Hem",
+    "scales": "Skalor",
+    "toolkit": "Verktygslåda",
+    "library": "Bibliotek",
+    "knowledge": "Kunskap",
+    "about": "Om"
+  },
+  "scales": {
+    "inner": "Inre Allmänningar",
+    "relational": "Relationella Allmänningar",
+    "societal": "Samhälleliga Allmänningar",
+    "planetary": "Planetära Allmänningar"
+  },
+  "hero": {
+    "title": "Från Isolering till Gemenskap",
+    "subtitle": "Att utforska processen av att kommunisera—att bygga gemenskap och skapa allmänningar",
+    "cta": "Börja Utforska"
+  },
+  "manifesto": {
+    "quote": "Vi lever i en tid av djup isolering—trots att vi är mer \"uppkopplade\" än någonsin. Communize är en inbjudan att delta i vår tids stora verk: att väva samman det sociala tyget igen.",
+    "body": "Detta är ett upprop att röra oss från en värld av \"jag\" till en värld av \"vi\"—inte genom att förlora jaget, utan genom att finna det i ett vidare sammanhang av tillhörighet och ömsesidig omsorg. Det är både uråldrig visdom och brådskande nödvändighet: insikten att vi blomstrar tillsammans, eller inte alls."
+  },
+  "scalesSection": {
+    "title": "De Fyra Skalorna av Kommunisering",
+    "subtitle": "Från det inre landskapet av självet till de planetära allmänningarna, utforskar vi hur tillhörighet manifesteras på varje nivå av existens.",
+    "inner": {
+      "description": "Integration inom—att kommunisera psyket, delar av självet, och den inre ekologin av tillhörighet."
+    },
+    "relational": {
+      "description": "Tvåpersoners- och smågruppskommunisering—relationer som delade fält av tillhörighet."
+    },
+    "societal": {
+      "description": "Gemenskaper, kooperativ, grannskaper och lokala ekonomier—att bygga motståndskraftiga strukturer av ömsesidig hjälp."
+    },
+    "planetary": {
+      "description": "Den globala dimensionen—digitala allmänningar, ekologiskt förvaltarskap och planetärt styrande som delat ansvar."
+    }
+  },
+  "trilogy": {
+    "title": "En Komplett Karta över Mänskligt Blomstrande",
+    "subtitle": "Communize fullbordar en trilogi av utforskningar: från uppvaknande till förståelse till förkroppsligande i gemenskap.",
+    "nondualize": {
+      "subtitle": "Varande",
+      "description": "Att förstå verklighetens förenade natur och vakna till helheten som föregår all uppdelning.",
+      "cta": "Utforska Nondualize →"
+    },
+    "spiralize": {
+      "subtitle": "Blivande",
+      "description": "Att kartlägga medvetandets utvecklingsstadier och förstå hur vi utvecklas och förvandlas.",
+      "cta": "Utforska Spiralize →"
+    },
+    "communize": {
+      "subtitle": "Tillhörighet",
+      "description": "Att manifestera kollektiv visdom i sociala strukturer och väva tyget av genuin gemenskap.",
+      "youAreHere": "Du är här"
+    }
+  },
+  "cta": {
+    "title": "Gå med i Processen",
+    "description": "Detta projekt frodas på kollektiv intelligens. Allt innehåll är öppen källkod och byggs gemensamt. Dina insikter, erfarenheter och bidrag hjälper till att expandera allmänningarna.",
+    "github": "Bidra på GitHub",
+    "contact": "Hör av Dig"
+  },
+  "footer": {
+    "license": "Innehåll delat under CC BY-SA 4.0",
+    "sisterSites": "Systersidor",
+    "contact": "Kontakt",
+    "copyright": "© {year} Communize. Öppen källkod och byggt med avsikt."
+  },
+  "about": {
+    "title": "Om Communize",
+    "subtitle": "Att väva samman det sociala tyget igen",
+    "intro": [
+      "Communize är en gratis, öppen resurs för att utforska konsten och arkitekturen av tillhörighet—hur vi skapar, upprätthåller och utvecklar allmänningar på varje nivå av livet.",
+      "Denna webbplats förenar inre integration, utvecklingsförståelse och systemisk design. Vi undersöker kommunisering som både verb och vision: den aktiva processen att bygga delat ägande, kollektivt ansvar och djupa relationella band.",
+      "Från psykologin av tillhörighet till strukturer för samarbete, från forntida allmänningar till digitala kooperativ, studerar och delar vi modeller som gör det möjligt för människor att förvalta delade resurser och blomstra tillsammans."
+    ],
+    "philosophy": {
+      "title": "Vår Filosofi",
+      "points": [
+        "Helt gratis och öppen källkod—inga betalväggar, ingen spårning",
+        "Statisk och enkel—bara idéer och resurser",
+        "Balansera teori med praktik",
+        "Ärlig om spänningar och utmaningar",
+        "Integration över skalor—inre till planetär"
+      ]
+    },
+    "ecosystem": {
+      "title": "Del av ett Ekosystem",
+      "description": "Communize är en del av en familj av webbplatser som utforskar mänskligt medvetande och social evolution:",
+      "nondualize": {
+        "subtitle": "Varande",
+        "description": "Att förstå verklighetens förenade natur och vakna till helhet.",
+        "link": "Besök Nondualize.org"
+      },
+      "spiralize": {
+        "subtitle": "Blivande",
+        "description": "Att kartlägga utvecklingsstadier av medvetande och värderingsutveckling.",
+        "link": "Besök Spiralize.org"
+      },
+      "communize": {
+        "subtitle": "Tillhörighet",
+        "description": "Att bygga gemenskap och skapa allmänningar på varje nivå.",
+        "link": "Du är här"
+      },
+      "ggf": {
+        "subtitle": "Systematisering",
+        "description": "Att utforma styrningsramverk för planetär samordning.",
+        "link": "Besök GlobalGovernanceFrameworks.org"
+      }
+    },
+    "author": {
+      "title": "Om Skaparen",
+      "text": "Communize skapas av Björn Kenneth Holmström, som utforskar skärningspunkten mellan medvetandeutveckling, sociala system och kollektiv visdom.",
+      "link": "Besök personlig webbplats"
+    },
+    "openSource": {
+      "title": "Öppen Källkod & Kollaborativ",
+      "text": "Detta projekt trivs på kollektiv intelligens. Allt innehåll är licensierat under Creative Commons (CC BY-SA 4.0) och koden är MIT-licensierad. Bidrag är välkomna!",
+      "github": "Visa på GitHub"
+    }
+  }
+}
