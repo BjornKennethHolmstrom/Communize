@@ -1,6 +1,7 @@
 <!-- /src/routes/+page.svelte -->
 <script lang="ts">
   import { _ } from 'svelte-i18n';
+  import { base } from '$app/paths';
 </script>
 
 <!-- Hero Section -->
@@ -12,7 +13,7 @@
       <!-- Logo -->
       <div class="mb-8">
         <img 
-          src="/logo.svg" 
+          src="{base}/logo.svg" 
           alt="Communize Logo" 
           class="w-32 h-32 mx-auto"
         />
@@ -28,13 +29,13 @@
       
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
         <a 
-          href="/scales"
+          href="{base}/scales"
           class="px-8 py-3 bg-moss-600 text-white rounded-lg hover:bg-moss-700 transition-colors font-medium shadow-md hover:shadow-lg"
         >
           {$_('hero.cta')}
         </a>
         <a 
-          href="/about"
+          href="{base}/about"
           class="px-8 py-3 border-2 border-earth-300 text-earth-700 rounded-lg hover:border-moss-400 hover:text-moss-700 transition-colors font-medium"
         >
           {$_('nav.about')}
@@ -69,7 +70,7 @@
     
     <div class="grid md:grid-cols-2 gap-8">
       <!-- Inner Commons -->
-      <a href="/scales/inner" class="group">
+      <a href="{base}/scales/inner" class="group">
         <div class="bg-gradient-to-br from-moss-50 to-earth-50 rounded-xl p-8 hover:shadow-lg transition-all border border-earth-200 hover:border-moss-300">
           <div class="w-12 h-12 bg-moss-500 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -86,7 +87,7 @@
       </a>
       
       <!-- Relational Commons -->
-      <a href="/scales/relational" class="group">
+      <a href="{base}/scales/relational" class="group">
         <div class="bg-gradient-to-br from-clay-50 to-earth-50 rounded-xl p-8 hover:shadow-lg transition-all border border-earth-200 hover:border-moss-300">
           <div class="w-12 h-12 bg-clay-500 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -103,7 +104,7 @@
       </a>
       
       <!-- Societal Commons -->
-      <a href="/scales/societal" class="group">
+      <a href="{base}/scales/societal" class="group">
         <div class="bg-gradient-to-br from-earth-50 to-moss-50 rounded-xl p-8 hover:shadow-lg transition-all border border-earth-200 hover:border-moss-300">
           <div class="w-12 h-12 bg-earth-600 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -120,7 +121,7 @@
       </a>
       
       <!-- Planetary Commons -->
-      <a href="/scales/planetary" class="group">
+      <a href="{base}/scales/planetary" class="group">
         <div class="bg-gradient-to-br from-moss-50 to-clay-50 rounded-xl p-8 hover:shadow-lg transition-all border border-earth-200 hover:border-moss-300">
           <div class="w-12 h-12 bg-moss-600 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -153,7 +154,7 @@
       <!-- Nondualize -->
       <div class="bg-white rounded-lg p-6 shadow-md border border-earth-200">
         <div class="flex items-center gap-3 mb-3">
-          <img src="/logo-nondualize.svg" alt="Nondualize logo" class="w-10 h-10" />
+          <img src="{base}/logo-nondualize.svg" alt="Nondualize logo" class="w-10 h-10" />
           <h3 class="font-serif text-xl text-earth-900">Nondualize</h3>
         </div>
         <p class="text-sm text-earth-600 mb-2 font-medium">
@@ -170,7 +171,7 @@
       <!-- Spiralize -->
       <div class="bg-white rounded-lg p-6 shadow-md border border-earth-200">
         <div class="flex items-center gap-3 mb-3">
-          <img src="/logo-spiralize.svg" alt="Spiralize logo" class="w-10 h-10" />
+          <img src="{base}/logo-spiralize.svg" alt="Spiralize logo" class="w-10 h-10" />
           <h3 class="font-serif text-xl text-earth-900">Spiralize</h3>
         </div>
         <p class="text-sm text-earth-600 mb-2 font-medium">
@@ -187,7 +188,7 @@
       <!-- Communize -->
       <div class="bg-white rounded-lg p-6 shadow-md border-2 border-moss-400">
         <div class="flex items-center gap-3 mb-3">
-          <img src="/logo.svg" alt="Communize logo" class="w-10 h-10" />
+          <img src="{base}/logo.svg" alt="Communize logo" class="w-10 h-10" />
           <h3 class="font-serif text-xl text-earth-900">Communize</h3>
         </div>
         <p class="text-sm text-earth-600 mb-2 font-medium">
@@ -215,7 +216,7 @@
     </p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
       <a 
-        href="https://github.com/BjornKennethHolmstrom/communize"
+        href="https://github.com/BjornKennethHolmstrom/Communize"
         target="_blank"
         rel="noopener noreferrer"
         class="inline-flex items-center gap-2 px-6 py-3 bg-earth-800 text-white rounded-lg hover:bg-earth-900 transition-colors font-medium"

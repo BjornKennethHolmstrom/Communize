@@ -2,6 +2,7 @@
 <script lang="ts">
   import { fade } from 'svelte/transition';
   import languageStore from '$lib/stores/languageStore';
+  import { base } from '$app/paths';
 
   export let data;
   
@@ -41,11 +42,11 @@
     <nav class="mb-8 text-sm">
       <ol class="flex items-center gap-2 text-earth-600">
         <li>
-          <a href="/scales" class="hover:text-moss-600 transition-colors">Scales</a>
+          <a href="{base}/scales" class="hover:text-moss-600 transition-colors">Scales</a>
         </li>
         <li class="text-earth-400">/</li>
         <li>
-          <a href="/scales/relational" class="hover:text-moss-600 transition-colors">{t.relationalCommons}</a>
+          <a href="{base}/scales/relational" class="hover:text-moss-600 transition-colors">{t.relationalCommons}</a>
         </li>
         <li class="text-earth-400">/</li>
         <li class="text-earth-900">{data.metadata.title}</li>
@@ -84,7 +85,7 @@
 
     <footer class="mt-16 pt-8 border-t border-earth-200">
       <a 
-        href="/scales/relational"
+        href="{base}/scales/relational"
         class="inline-flex items-center gap-2 text-earth-600 hover:text-moss-600 transition-colors"
       >
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

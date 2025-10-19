@@ -1,6 +1,6 @@
-<!-- src/lib/components/Header.svelte -->
 <script lang="ts">
   import { _ } from 'svelte-i18n';
+  import { base } from '$app/paths';
   import languageStore from '$lib/stores/languageStore';
   
   const { language, toggleLanguage } = languageStore;
@@ -16,8 +16,8 @@
     <div class="flex items-center justify-between h-16">
       <!-- Logo and site name -->
       <div class="flex items-center">
-        <a href="/" class="flex items-center gap-3 group">
-          <img src="/logo.svg" alt="Communize logo" class="w-10 h-10" />
+        <a href="{base}/" class="flex items-center gap-3 group">
+          <img src="{base}/logo.svg" alt="Communize logo" class="w-10 h-10" />
           <div>
             <div class="font-serif text-xl text-earth-900 group-hover:text-moss-700 transition-colors">
               {$_('siteName')}
@@ -31,19 +31,19 @@
 
       <!-- Desktop navigation -->
       <div class="hidden md:flex items-center gap-6">
-        <a href="/scales" class="text-earth-700 hover:text-moss-600 font-medium">
+        <a href="{base}/scales" class="text-earth-700 hover:text-moss-600 font-medium">
           {$_('nav.scales')}
         </a>
-        <a href="/toolkit" class="text-earth-700 hover:text-moss-600 font-medium">
+        <a href="{base}/toolkit" class="text-earth-700 hover:text-moss-600 font-medium">
           {$_('nav.toolkit')}
         </a>
-        <a href="/library" class="text-earth-700 hover:text-moss-600 font-medium">
+        <a href="{base}/library" class="text-earth-700 hover:text-moss-600 font-medium">
           {$_('nav.library')}
         </a>
-        <a href="/knowledge" class="text-earth-700 hover:text-moss-600 font-medium">
+        <a href="{base}/knowledge" class="text-earth-700 hover:text-moss-600 font-medium">
           {$_('nav.knowledge')}
         </a>
-        <a href="/about" class="text-earth-700 hover:text-moss-600 font-medium">
+        <a href="{base}/about" class="text-earth-700 hover:text-moss-600 font-medium">
           {$_('nav.about')}
         </a>
         
@@ -77,19 +77,19 @@
     {#if mobileMenuOpen}
       <div class="md:hidden py-4 border-t border-earth-200">
         <div class="flex flex-col gap-3">
-          <a href="/scales" class="text-earth-700 hover:text-moss-600 font-medium py-2">
+          <a href="{base}/scales" class="text-earth-700 hover:text-moss-600 font-medium py-2">
             {$_('nav.scales')}
           </a>
-          <a href="/toolkit" class="text-earth-700 hover:text-moss-600 font-medium py-2">
+          <a href="{base}/toolkit" class="text-earth-700 hover:text-moss-600 font-medium py-2">
             {$_('nav.toolkit')}
           </a>
-          <a href="/library" class="text-earth-700 hover:text-moss-600 font-medium py-2">
+          <a href="{base}/library" class="text-earth-700 hover:text-moss-600 font-medium py-2">
             {$_('nav.library')}
           </a>
-          <a href="/knowledge" class="text-earth-700 hover:text-moss-600 font-medium py-2">
+          <a href="{base}/knowledge" class="text-earth-700 hover:text-moss-600 font-medium py-2">
             {$_('nav.knowledge')}
           </a>
-          <a href="/about" class="text-earth-700 hover:text-moss-600 font-medium py-2">
+          <a href="{base}/about" class="text-earth-700 hover:text-moss-600 font-medium py-2">
             {$_('nav.about')}
           </a>
           <button

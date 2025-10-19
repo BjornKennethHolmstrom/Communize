@@ -1,5 +1,6 @@
 <!-- /src/routes/scales/+page.svelte -->
 <script lang="ts">
+  import { base } from '$app/paths';
   import { fade } from 'svelte/transition';
   import languageStore from '$lib/stores/languageStore';
 
@@ -208,7 +209,7 @@
     <div class="space-y-8 mb-16">
       {#each t.scales as scale}
         <a 
-          href="/scales/{scale.id}"
+          href="{base}/scales/{scale.id}"
           class="block group"
         >
           <div class="bg-gradient-to-br {scale.color} rounded-xl p-8 border-2 {scale.borderColor} hover:shadow-lg transition-all">

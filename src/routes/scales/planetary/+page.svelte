@@ -2,6 +2,7 @@
 <script lang="ts">
   import { fade } from 'svelte/transition';
   import languageStore from '$lib/stores/languageStore';
+  import { base } from '$app/paths';
 
   $: currentLanguage = languageStore.language;
   
@@ -111,7 +112,7 @@
       <div class="space-y-4">
         {#each t.essays.items as essay}
           <a 
-            href="/scales/planetary/{essay.slug}"
+            href="{base}/scales/planetary/{essay.slug}"
             class="block bg-white rounded-lg p-6 border-2 border-earth-200 hover:border-earth-400 hover:shadow-md transition-all group"
           >
             <h3 class="text-xl font-serif text-earth-900 mb-2 group-hover:text-earth-700 transition-colors">
@@ -146,7 +147,7 @@
     <!-- Back Link -->
     <div class="mt-12 text-center">
       <a 
-        href="/scales"
+        href="{base}/scales"
         class="inline-flex items-center gap-2 text-earth-600 hover:text-moss-600 transition-colors"
       >
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
