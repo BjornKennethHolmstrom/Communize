@@ -2,6 +2,7 @@
 <script lang="ts">
   import { _ } from 'svelte-i18n';
   import { fade } from 'svelte/transition';
+  import { base } from '$app/paths';
 </script>
 
 <svelte:head>
@@ -58,7 +59,7 @@
         <!-- Nondualize -->
         <div class="bg-white rounded-lg p-6 border-2 border-earth-200 hover:border-moss-300 transition-colors">
           <div class="flex items-center gap-3 mb-3">
-            <img src="/logo-nondualize.svg" alt="Nondualize logo" class="w-10 h-10" />
+            <img src="{base}/logo-nondualize.svg" alt="Nondualize logo" class="w-10 h-10" />
             <div>
               <h3 class="font-serif text-lg text-earth-900">Nondualize</h3>
               <p class="text-sm text-earth-600">{$_('about.ecosystem.nondualize.subtitle')}</p>
@@ -80,7 +81,7 @@
         <!-- Spiralize -->
         <div class="bg-white rounded-lg p-6 border-2 border-earth-200 hover:border-moss-300 transition-colors">
           <div class="flex items-center gap-3 mb-3">
-            <img src="/logo-spiralize.svg" alt="Spiralize logo" class="w-10 h-10" />
+            <img src="{base}/logo-spiralize.svg" alt="Spiralize logo" class="w-10 h-10" />
             <div>
               <h3 class="font-serif text-lg text-earth-900">Spiralize</h3>
               <p class="text-sm text-earth-600">{$_('about.ecosystem.spiralize.subtitle')}</p>
@@ -102,7 +103,7 @@
         <!-- Communize (current) -->
         <div class="bg-moss-50 rounded-lg p-6 border-2 border-moss-400">
           <div class="flex items-center gap-3 mb-3">
-            <img src="/logo.svg" alt="Communize logo" class="w-10 h-10" />
+            <img src="{base}/logo.svg" alt="Communize logo" class="w-10 h-10" />
             <div>
               <h3 class="font-serif text-lg text-earth-900">Communize</h3>
               <p class="text-sm text-earth-600">{$_('about.ecosystem.communize.subtitle')}</p>
@@ -119,7 +120,7 @@
         <!-- GGF -->
         <div class="bg-white rounded-lg p-6 border-2 border-earth-200 hover:border-moss-300 transition-colors">
           <div class="flex items-center gap-3 mb-3">
-            <img src="/logo-ggf.svg" alt="GGF logo" class="w-10 h-10" />
+            <img src="{base}/logo-ggf.svg" alt="GGF logo" class="w-10 h-10" />
             <div>
               <h3 class="font-serif text-lg text-earth-900">GGF</h3>
               <p class="text-sm text-earth-600">{$_('about.ecosystem.ggf.subtitle')}</p>
