@@ -2,6 +2,14 @@ import { error } from '@sveltejs/kit';
 import { get } from 'svelte/store';
 import languageStore from '$lib/stores/languageStore.js';
 
+export const entries = () => {
+  return [
+    { slug: 'community-of-self' },
+    { slug: 'self-compassion' },
+    { slug: 'shadow-as-exile' }
+  ];
+};
+
 export async function load({ params }) {
   const { slug } = params;
   

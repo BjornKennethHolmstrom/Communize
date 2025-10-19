@@ -2,6 +2,14 @@ import { error } from '@sveltejs/kit';
 import { get } from 'svelte/store';
 import languageStore from '$lib/stores/languageStore.js';
 
+export const entries = () => {
+  return [
+    { slug: 'property-to-stewardship' },
+    { slug: 'decision-making' },
+    { slug: 'economics-of-care' }
+  ];
+};
+
 export async function load({ params }) {
   const { slug } = params;
   

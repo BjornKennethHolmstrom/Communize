@@ -3,6 +3,14 @@ import { error } from '@sveltejs/kit';
 import { get } from 'svelte/store';
 import languageStore from '$lib/stores/languageStore.js';
 
+export const entries = () => {
+  return [
+    { slug: 'biosphere-commons' },
+    { slug: 'cosmo-localism' },
+    { slug: 'digital-commons' }
+  ];
+};
+
 export async function load({ params }) {
   const { slug } = params;
   
