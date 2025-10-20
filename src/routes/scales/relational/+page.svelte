@@ -3,6 +3,8 @@
   import { fade } from 'svelte/transition';
   import languageStore from '$lib/stores/languageStore';
   import { base } from '$app/paths';
+  import SEO from '$lib/components/SEO.svelte';
+  import ShareButtons from '$lib/components/ShareButtons.svelte';
 
   $: currentLanguage = languageStore.language;
   
@@ -36,50 +38,59 @@
         comingSoon: "Coming soon",
         description: "Practical exercises for relational communizing will be added in future phases."
       },
-     back: "Back to all scales"
+      back: "Back to all scales",
+      share: {
+        title: "Relational Commons - The Space Between | Communize",
+        description: "Learn the fundamental practices of communizing: how to create shared space, navigate difference, transform conflict, and build trust in relationships."
+      }
     },
     sv: {
-      title: "Relationella Allmänningar",
-      subtitle: "Utrymmet Däremellan",
+      title: "Relationella allmänningar",
+      subtitle: "Utrymmet däremellan",
       intro: "Innan det kan finnas gemenskaper måste det finnas relationer. Den relationella skalan är där vi lär oss de grundläggande praktikerna för kommunisering: hur man skapar delat utrymme, navigerar skillnader, transformerar konflikter och bygger förtroende. Det är laboratoriet där två eller fler människor upptäcker vad det betyder att vårda något tillsammans.",
       essays: {
-        title: "Grundläggande Essäer",
+        title: "Grundläggande essäer",
         items: [
           {
-            title: "Relationen som Tredje Enhet",
+            title: "Relationen som tredje enhet",
             description: "Att utforska hur hälsosamma relationer inte existerar som två individer, utan som tre: du, jag och vi—det delade fält vi samskapar.",
             slug: "relationship-as-third-entity"
           },
           {
-            title: "Konflikt som Allmänning",
+            title: "Konflikt som allmänning",
             description: "Hur oenighet blir en delad resurs att vårda, inte ett problem att lösa eller undvika.",
             slug: "conflict-as-commons"
           },
           {
-            title: "Delade Resurser, Delade Liv",
+            title: "Delade resurser, delade liv",
             description: "De praktiska realiteterna av kommunisering i intima relationer—från ekonomi till hushållsarbete till emotionell omsorg.",
             slug: "shared-resources"
           }
         ]
       },
       practices: {
-        title: "Praktiker & Utforskningar",
+        title: "Praktiker och utforskningar",
         comingSoon: "Kommer snart",
         description: "Praktiska övningar för relationell kommunisering kommer att läggas till i framtida faser."
       },
-     back: "Tillbaka till alla skalor"
+      back: "Tillbaka till alla skalor",
+      share: {
+        title: "Relationella allmänningar - Utrymmet däremellan | Communize",
+        description: "Lär dig de grundläggande praktikerna för kommunisering: hur man skapar delat utrymme, navigerar skillnader, transformerar konflikter och bygger förtroende i relationer."
+      }
     }
   };
 
   $: t = translations[$currentLanguage] || translations.en;
 </script>
 
-<svelte:head>
-  <title>{t.title} | Communize</title>
-  <meta name="description" content={t.subtitle} />
-</svelte:head>
-
 {#key $currentLanguage}
+<SEO
+  title={t.title}
+  description={t.intro}
+  keywords="relational commons, relationships, conflict transformation, trust building, shared space"
+  section={currentLanguage === 'en' ? 'Relational Commons' : 'Relationella Allmänningar'}
+/>
 <div class="min-h-screen" in:fade>
   <div class="max-w-4xl mx-auto px-4 py-16">
     <!-- Header -->
@@ -159,3 +170,8 @@
   </div>
 </div>
 {/key}
+
+<ShareButtons 
+  title={t.share.title}
+  description={t.share.description}
+/>

@@ -3,6 +3,8 @@
   import { fade } from 'svelte/transition';
   import languageStore from '$lib/stores/languageStore';
   import { base } from '$app/paths';
+  import SEO from '$lib/components/SEO.svelte';
+  import ShareButtons from '$lib/components/ShareButtons.svelte';
 
   $: currentLanguage = languageStore.language;
   
@@ -36,50 +38,59 @@
         comingSoon: "Coming soon",
         description: "Case studies, governance models, and practical frameworks for planetary communizing will be added in future phases."
       },
-      back: "Back to all scales"
+      back: "Back to all scales",
+      share: {
+        title: "Planetary Commons - Global & Digital | Communize",
+        description: "Explore how communizing transcends borders—from climate governance to digital sovereignty, from ocean stewardship to the global knowledge commons."
+      }
     },
     sv: {
-      title: "Planetära Allmänningar",
-      subtitle: "Global & Digital",
+      title: "Planetära allmänningar",
+      subtitle: "Global och digital",
       intro: "Biosfären, internet, atmosfären—resurser som tillhör ingen och alla. Det är här kommunisering överskrider gränser och nationer, och kräver samordning på skalor våra förfäder aldrig föreställde sig. Från klimatstyrning till digital suveränitet, från havens förvaltarskap till den globala kunskapsallmänningen utforskar vi hur mänskligheten kan lära sig att vårda det vi alla delar.",
       essays: {
-        title: "Grundläggande Essäer",
+        title: "Grundläggande essäer",
         items: [
           {
-            title: "Biosfären som Ultimat Allmänning",
+            title: "Biosfären som ultimat allmänning",
             description: "Jordens levande system känner inte till nationsgränser. Hur styr vi det som upprätthåller allt liv?",
             slug: "biosphere-commons"
           },
           {
-            title: "Digitala Allmänningar & Datasuveränitet",
+            title: "Digitala allmänningar och datasuveränitet",
             description: "Internet lovade samhörighet. Kan vi återta det från inhägnad och utvinning?",
             slug: "digital-commons"
           },
           {
-            title: "Kosmo-Lokalism",
+            title: "Kosmo-lokalism",
             description: "Global kunskap, lokal produktion—ett mönster för planetär motståndskraft utan planetär homogenisering.",
             slug: "cosmo-localism"
           }
         ]
       },
       practices: {
-        title: "Praktiker & Utforskningar",
+        title: "Praktiker och utforskningar",
         comingSoon: "Kommer snart",
         description: "Fallstudier, styrningsmodeller och praktiska ramverk för planetär kommunisering kommer att läggas till i framtida faser."
       },
-      back: "Tillbaka till alla skalor"
+      back: "Tillbaka till alla skalor",
+      share: {
+        title: "Planetära allmänningar - Global och digital | Communize",
+        description: "Utforska hur kommunisering överskrider gränser—från klimatstyrning till digital suveränitet, från havens förvaltarskap till den globala kunskapsallmänningen."
+      }
     }
   };
 
   $: t = translations[$currentLanguage] || translations.en;
 </script>
 
-<svelte:head>
-  <title>{t.title} | Communize</title>
-  <meta name="description" content={t.subtitle} />
-</svelte:head>
-
 {#key $currentLanguage}
+<SEO
+  title={t.title}
+  description={t.intro}
+  keywords="planetary commons, global commons, digital commons, climate governance, biosphere, data sovereignty"
+  section={currentLanguage === 'en' ? 'Planetary Commons' : 'Planetära Allmänningar'}
+/>
 <div class="min-h-screen" in:fade>
   <div class="max-w-4xl mx-auto px-4 py-16">
     <!-- Header -->
@@ -159,3 +170,9 @@
   </div>
 </div>
 {/key}
+
+<!-- Share Buttons -->
+<ShareButtons 
+  title={t.share.title}
+  description={t.share.description}
+/>

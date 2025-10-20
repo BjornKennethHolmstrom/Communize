@@ -2,6 +2,7 @@
 <script lang="ts">
   import { fade } from 'svelte/transition';
   import languageStore from '$lib/stores/languageStore';
+  import SEO from '$lib/components/SEO.svelte';
 
   $: currentLanguage = languageStore.language;
   
@@ -78,15 +79,15 @@
       }
     },
     sv: {
-      title: "Modeller & Praxis Bibliotek",
+      title: "Modeller och praxis bibliotek",
       subtitle: "Fallstudier och praktiska guider för kommunisering",
       intro: "Biblioteket kommer att vara en kurerad samling av verkliga exempel—från blomstrande ekobyar till arbetarkooperativ, från grannverktygsbibliotek till digitala allmänningsplattformar.",
       comingSoon: "Kommer i Fas 2",
       plannedContent: {
-        title: "Vad Som Kommer",
+        title: "Vad som kommer",
         categories: [
           {
-            title: "Lokala Modeller",
+            title: "Lokala modeller",
             icon: "🏘️",
             examples: [
               "Bostadskooperativ",
@@ -97,7 +98,7 @@
             ]
           },
           {
-            title: "Digitala Allmänningar",
+            title: "Digitala allmänningar",
             icon: "💻",
             examples: [
               "Öppen källkod-kollektiv",
@@ -108,7 +109,7 @@
             ]
           },
           {
-            title: "Ekologiska Modeller",
+            title: "Ekologiska modeller",
             icon: "🌱",
             examples: [
               "Gemenskapsträdgårdar och matskogar",
@@ -132,7 +133,7 @@
         ]
       },
       practicalGuides: {
-        title: "Steg-för-Steg Guider",
+        title: "Steg-för-steg guider",
         description: "Varje fallstudie kommer att innehålla praktisk vägledning:",
         items: [
           "Hur det började och utvecklades",
@@ -143,9 +144,9 @@
         ]
       },
       contribute: {
-        title: "Dela Din Historia",
+        title: "Dela din historia",
         text: "Är du en del av en blomstrande allmänning? Har du startat ett kooperativ, gemenskapsträdgård eller ömsesidig hjälpnätverk? Vi skulle älska att presentera din historia i biblioteket.",
-        button: "Skicka in en Fallstudie"
+        button: "Skicka in en fallstudie"
       }
     }
   };
@@ -153,12 +154,13 @@
   $: t = translations[$currentLanguage] || translations.en;
 </script>
 
-<svelte:head>
-  <title>{t.title} | Communize</title>
-  <meta name="description" content={t.subtitle} />
-</svelte:head>
-
 {#key $currentLanguage}
+<SEO
+  title={t.title}
+  description={t.subtitle}
+  keywords="commons models, case studies, cooperatives, ecovillages, practical guides"
+/>
+
 <div class="min-h-screen" in:fade>
   <div class="max-w-6xl mx-auto px-4 py-16">
     <!-- Header -->

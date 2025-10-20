@@ -1,16 +1,34 @@
 <!-- /src/routes/about/+page.svelte -->
 <script lang="ts">
   import { _ } from 'svelte-i18n';
+  import languageStore from '$lib/stores/languageStore';
   import { fade } from 'svelte/transition';
   import { base } from '$app/paths';
+  import SEO from '$lib/components/SEO.svelte';
+  import ShareButtons from '$lib/components/ShareButtons.svelte';
+  
+  $: currentLanguage = languageStore.language;
+  
+  const shareContent = {
+    en: {
+      title: "About Communize - Weaving the social fabric back together",
+      description: "Learn about Communize, a free open resource exploring the art and architecture of belonging at every scale."
+    },
+    sv: {
+      title: "Om Communize - Att väva samman det sociala tyget igen",
+      description: "Lär dig om Communize, en gratis öppen resurs som utforskar konsten och arkitekturen av tillhörighet på varje nivå."
+    }
+  };
+  
+  $: content = shareContent[$currentLanguage] || shareContent.en;
 </script>
 
-<svelte:head>
-  <title>{$_('about.title')} | Communize</title>
-  <meta name="description" content={$_('about.subtitle')} />
-</svelte:head>
-
 <div class="min-h-screen" in:fade>
+  <SEO
+    title={$_('about.title')}
+    description={$_('about.subtitle')}
+    keywords="about communize, commons philosophy, collective ownership, community building, open source"
+  />
   <div class="max-w-4xl mx-auto px-4 py-16">
     <!-- Header -->
     <div class="text-center mb-16">
@@ -180,4 +198,11 @@
       </a>
     </div>
   </div>
+  <ShareButtons 
+    title={content.title}
+    description={content.description}
+  />
 </div>
+
+
+

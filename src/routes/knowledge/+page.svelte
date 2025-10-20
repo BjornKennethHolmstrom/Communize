@@ -2,6 +2,7 @@
 <script lang="ts">
   import { fade } from 'svelte/transition';
   import languageStore from '$lib/stores/languageStore';
+  import SEO from '$lib/components/SEO.svelte';
 
   $: currentLanguage = languageStore.language;
   
@@ -96,10 +97,10 @@
       intro: "Kunskapsallmänningen kommer att vara ett levande bibliotek av läsning, forskning och visdom från olika traditioner—som förbinder forntida praktiker med samtida innovationer.",
       comingSoon: "Kommer i Fas 2",
       plannedContent: {
-        title: "Vad Som Kommer",
+        title: "Vad som kommer",
         sections: [
           {
-            title: "Grundläggande Teori",
+            title: "Grundläggande teori",
             icon: "📚",
             description: "Kärntexter om allmänningar, gåvoekonomi, kommunalism och kollektiv styrning",
             examples: [
@@ -110,7 +111,7 @@
             ]
           },
           {
-            title: "Historisk Härkomst",
+            title: "Historisk härkomst",
             icon: "🌳",
             description: "Rötterna av kommunisering genom tid och kultur",
             examples: [
@@ -122,7 +123,7 @@
             ]
           },
           {
-            title: "Samtida Praktik",
+            title: "Samtida praktik",
             icon: "🔄",
             description: "Moderna rörelser och framväxande mönster",
             examples: [
@@ -134,7 +135,7 @@
             ]
           },
           {
-            title: "Interkulturell Visdom",
+            title: "Interkulturell visdom",
             icon: "🌍",
             description: "Att lära från olika traditioner av gemensamt liv",
             examples: [
@@ -151,11 +152,11 @@
         title: "Biblioteksfunktioner",
         items: [
           {
-            title: "Kurerade Läslistor",
+            title: "Kurerade läslistor",
             description: "Tematiskt organiserade samlingar för olika aspekter av kommunisering"
           },
           {
-            title: "Annoterad Bibliografi",
+            title: "Annoterad bibliografi",
             description: "Nyckeltexter med sammanfattningar och insikter om deras relevans"
           },
           {
@@ -169,9 +170,9 @@
         ]
       },
       contribute: {
-        title: "Föreslå en Resurs",
+        title: "Föreslå en resurs",
         text: "Känner du till en bok, artikel eller resurs som fördjupar förståelsen av allmänningar? Hjälp oss växa detta bibliotek genom att föreslå tillägg.",
-        button: "Bidra med en Resurs"
+        button: "Bidra med en resurs"
       }
     }
   };
@@ -179,12 +180,12 @@
   $: t = translations[$currentLanguage] || translations.en;
 </script>
 
-<svelte:head>
-  <title>{t.title} | Communize</title>
-  <meta name="description" content={t.subtitle} />
-</svelte:head>
-
 {#key $currentLanguage}
+<SEO
+  title={t.title}
+  description={t.subtitle}
+  keywords="commons knowledge, commons theory, gift economy, communalism, commons research"
+/>
 <div class="min-h-screen" in:fade>
   <div class="max-w-6xl mx-auto px-4 py-16">
     <!-- Header -->

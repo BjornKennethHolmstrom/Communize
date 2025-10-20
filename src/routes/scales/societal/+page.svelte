@@ -3,6 +3,8 @@
   import { fade } from 'svelte/transition';
   import languageStore from '$lib/stores/languageStore';
   import { base } from '$app/paths';
+  import SEO from '$lib/components/SEO.svelte';
+  import ShareButtons from '$lib/components/ShareButtons.svelte';
 
   $: currentLanguage = languageStore.language;
   
@@ -36,50 +38,59 @@
         comingSoon: "Coming soon",
         description: "Case studies, legal templates, and practical guides for societal communizing will be added in future phases."
       },
-      back: "Back to all scales"
+      back: "Back to all scales",
+      share: {
+        title: "Societal Commons - Communities & Cooperatives | Communize",
+        description: "Discover how communizing becomes visible and tangible in ecovillages, housing cooperatives, tool libraries, and local economies—with concrete legal structures and governance patterns."
+      }
     },
     sv: {
-      title: "Samhälleliga Allmänningar",
-      subtitle: "Gemenskaper & Kooperativ",
+      title: "Samhälleliga allmänningar",
+      subtitle: "Gemenskaper och kooperativ",
       intro: "Det är här kommunisering blir synlig och påtaglig—i ekobyar, bostadskooperativ, verktygsbibliotek och lokala ekonomier. På den samhälleliga skalan finner vi konkreta juridiska strukturer, beslutsprocesser och styrningsmodeller. Det är laboratoriet där små grupper lär sig att förvalta delade resurser, navigera maktdynamik och bygga motståndskraft tillsammans.",
       essays: {
-        title: "Grundläggande Essäer",
+        title: "Grundläggande essäer",
         items: [
           {
-            title: "Från Egendom till Förvaltarskap",
+            title: "Från egendom till förvaltarskap",
             description: "Att utforska hur vi skiftar från ägande-tänkande till allmännings-tänkande—juridiskt, praktiskt och filosofiskt.",
             slug: "property-to-stewardship"
           },
           {
-            title: "Beslutsfattande som Allmänning",
+            title: "Beslutsfattande som allmänning",
             description: "Hur grupper fattar beslut tillsammans—från konsensus till sociokrati till samtycke—och vad varje approach avslöjar om makt och tillhörighet.",
             slug: "decision-making"
           },
           {
-            title: "Omsorgens Ekonomi",
+            title: "Omsorgens ekonomi",
             description: "Vad händer när vi centrerar ömsesidighet, ömsesidig hjälp och omsorgsarbete istället för utvinning och profit?",
             slug: "economics-of-care"
           }
         ]
       },
       practices: {
-        title: "Praktiker & Utforskningar",
+        title: "Praktiker och utforskningar",
         comingSoon: "Kommer snart",
         description: "Fallstudier, juridiska mallar och praktiska guider för samhällelig kommunisering kommer att läggas till i framtida faser."
       },
-      back: "Tillbaka till alla skalor"
+      back: "Tillbaka till alla skalor",
+      share: {
+        title: "Samhälleliga allmänningar - Gemenskaper och kooperativ | Communize",
+        description: "Upptäck hur kommunisering blir synlig och påtaglig i ekobyar, bostadskooperativ, verktygsbibliotek och lokala ekonomier—med konkreta juridiska strukturer och styrningsmodeller."
+      }
     }
   };
 
   $: t = translations[$currentLanguage] || translations.en;
 </script>
 
-<svelte:head>
-  <title>{t.title} | Communize</title>
-  <meta name="description" content={t.subtitle} />
-</svelte:head>
-
 {#key $currentLanguage}
+<SEO
+  title={t.title}
+  description={t.intro}
+  keywords="societal commons, cooperatives, ecovillages, community governance, local economies, mutual aid"
+  section={currentLanguage === 'en' ? 'Societal Commons' : 'Samhälleliga Allmänningar'}
+/>
 <div class="min-h-screen" in:fade>
   <div class="max-w-4xl mx-auto px-4 py-16">
     <!-- Header -->
@@ -159,3 +170,8 @@
   </div>
 </div>
 {/key}
+
+<ShareButtons 
+  title={t.share.title}
+  description={t.share.description}
+/>

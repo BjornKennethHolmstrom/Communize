@@ -3,6 +3,7 @@
   import { base } from '$app/paths';
   import { fade } from 'svelte/transition';
   import languageStore from '$lib/stores/languageStore';
+  import SEO from '$lib/components/SEO.svelte';
 
   $: currentLanguage = languageStore.language;
   
@@ -87,19 +88,19 @@
       }
     },
     sv: {
-      title: "De Fyra Skalorna av Kommunisering",
+      title: "De fyra skalorna av kommunisering",
       subtitle: "Från inre integration till planetärt förvaltarskap",
       intro: "Kommunisering sker på varje nivå av existens—från förhållandet vi har med oss själva, till våra intima band, till våra lokala gemenskaper, till vår delade planet. Varje skala speglar de andra, men varje har sina egna unika mönster och praktiker.",
       principle: {
-        title: "Den Fraktala Principen",
+        title: "Den fraktala principen",
         text: "Som en fraktal uppträder samma grundläggande mönster av kommunisering på varje skala: skapa delade utrymmen, bygga förtroende, etablera överenskommelser, navigera konflikter och utvecklas tillsammans. Det som ändras är kontexten, komplexiteten och antalet deltagare—men kärndynamiken av tillhörighet förblir konstant."
       },
       scales: [
         {
           id: "inner",
-          title: "Inre Allmänningar",
+          title: "Inre allmänningar",
           icon: "🪞",
-          subtitle: "Gemenskapen Inom",
+          subtitle: "Gemenskapen inom",
           description: "Hur kommuniserar vi vårt eget medvetande? Denna skala utforskar det inre landskapet—vårt förhållande till våra egna delar, känslor och tankar. Med utgångspunkt i Internal Family Systems, skuggarbete och kontemplativa traditioner undersöker vi hur integration inom speglar integration utan.",
           themes: [
             "Självmedkänsla som själv-kommunisering",
@@ -112,8 +113,8 @@
         },
         {
           id: "relational",
-          title: "Relationella Allmänningar",
-          subtitle: "Utrymmet Däremellan",
+          title: "Relationella allmänningar",
+          subtitle: "Utrymmet däremellan",
           icon: "💞",
           description: "Tvåpersoners- och smågruppskommunisering—hur relationer själva blir delade fält. Från partnerskap och familjer till nära vänskaper utforskar denna skala hur vi skapar 'vi-utrymme' samtidigt som vi hedrar individuell autonomi. Det är övningsplatsen för all storskalig kommunisering.",
           themes: [
@@ -127,8 +128,8 @@
         },
         {
           id: "societal",
-          title: "Samhälleliga Allmänningar",
-          subtitle: "Gemenskaper & Kooperativ",
+          title: "Samhälleliga allmänningar",
+          subtitle: "Gemenskaper och kooperativ",
           icon: "🏘️",
           description: "Det är här de flesta tänker att 'allmänningar' börjar—grannskaper, kooperativ, ekobyar och lokala ekonomier. Här finner vi konkreta strukturer: juridiska avtal, beslutsprocesser, delade resurser och styrningsmodeller. Det är skalan av synlig, påtaglig kommunisering.",
           themes: [
@@ -142,8 +143,8 @@
         },
         {
           id: "planetary",
-          title: "Planetära Allmänningar",
-          subtitle: "Global & Digital",
+          title: "Planetära allmänningar",
+          subtitle: "Global och digital",
           icon: "🌍",
           description: "Biosfären, internet, atmosfären—resurser som tillhör ingen och alla. Denna skala utforskar hur vi styr det som överskrider gränser: klimat, hav, kunskap och digitalt utrymme. Det kräver nya former av samordning som hedrar både lokal autonomi och planetärt ömsesidigt beroende.",
           themes: [
@@ -157,11 +158,11 @@
         }
       ],
       integration: {
-        title: "Integration Över Skalor",
+        title: "Integration över skalor",
         text: "Dessa skalor är inte separata—de genomsyrar varandra. Hur vi relaterar till oss själva formar hur vi relaterar till andra. Lokala praktiker informerar globala mönster. Digitala verktyg möjliggör nya former av lokalt samarbete. Att förstå alla fyra skalor hjälper oss se den fullständiga ekologin av tillhörighet."
       },
       cta: {
-        title: "Utforska Varje Skala",
+        title: "Utforska varje skala",
         text: "Fördjupa dig i vilken skala som helst för att upptäcka essäer, praktiker och exempel på kommunisering i handling."
       }
     }
@@ -170,12 +171,12 @@
   $: t = translations[$currentLanguage] || translations.en;
 </script>
 
-<svelte:head>
-  <title>{t.title} | Communize</title>
-  <meta name="description" content={t.subtitle} />
-</svelte:head>
-
 {#key $currentLanguage}
+<SEO
+  title={t.title}
+  description={t.subtitle}
+  keywords="scales of communizing, inner commons, relational commons, societal commons, planetary commons"
+/>
 <div class="min-h-screen" in:fade>
   <div class="max-w-6xl mx-auto px-4 py-16">
     <!-- Header -->

@@ -3,6 +3,8 @@
   import { fade } from 'svelte/transition';
   import languageStore from '$lib/stores/languageStore';
   import { base } from '$app/paths';
+  import SEO from '$lib/components/SEO.svelte';
+  import ShareButtons from '$lib/components/ShareButtons.svelte';
 
   export let data;
   
@@ -24,13 +26,16 @@
   $: t = translations[$currentLanguage] || translations.en;
 </script>
 
-<svelte:head>
-  <title>{data.metadata.title} | {t.societalCommons} | Communize</title>
-  <meta name="description" content={data.metadata.subtitle} />
-  <meta name="author" content={data.metadata.author} />
-</svelte:head>
-
 <div class="min-h-screen" in:fade>
+  <SEO
+    title={data.metadata.title}
+    description={data.metadata.subtitle}
+    type="article"
+    author={data.metadata.author}
+    publishedTime={data.metadata.date}
+    section={t.societalCommons}
+    keywords="societal commons, community, cooperatives, governance, stewardship"
+  />
   <div class="max-w-4xl mx-auto px-4 py-16">
     
     {#if data.fallbackToEnglish}
@@ -82,6 +87,11 @@
     <article class="prose prose-lg prose-earth max-w-none">
       <svelte:component this={data.content} />
     </article>
+
+    <ShareButtons 
+      title={data.metadata.title}
+      description={data.metadata.subtitle}
+    />
 
     <footer class="mt-16 pt-8 border-t border-earth-200">
       <a 

@@ -2,6 +2,7 @@
 <script lang="ts">
   import { fade } from 'svelte/transition';
   import languageStore from '$lib/stores/languageStore';
+  import SEO from '$lib/components/SEO.svelte';
 
   $: currentLanguage = languageStore.language;
   
@@ -39,19 +40,19 @@
       }
     },
     sv: {
-      title: "Communize Verktygslåda",
+      title: "Communize verktygslåda",
       subtitle: "Praktiska resurser för att bygga och upprätthålla allmänningar",
       intro: "Verktygslådan kommer att erbjuda praktiska, nedladdningsbara resurser för att hjälpa dig börja kommunisera i ditt eget sammanhang—från arbetsblad och mallar till guider och bedömningsverktyg.",
-      comingSoon: "Kommer i Fas 2",
+      comingSoon: "Kommer i fas 2",
       plannedContent: {
-        title: "Vad Som Kommer",
+        title: "Vad som kommer",
         items: [
           {
             title: "Resurskartläggare",
             description: "Ett enkelt HTML-verktyg för att hjälpa dig katalogisera och kartlägga dina lokala delade resurser—verktygsbibliotek, gemenskapsodlingar, färdighetsdelningsnätverk och mer."
           },
           {
-            title: "Gör-Det-Själv Arbetsblad",
+            title: "Gör-det-själv arbetsblad",
             description: "Utskrivbara PDF-generatorer för gemenskapstillgångskartläggning, projektplanering, mötesunderlättande och beslutsprocesser."
           },
           {
@@ -59,13 +60,13 @@
             description: "Nedladdningsbara mallar för resursdelningsavtal, styrningsdokument och konfliktlösningsramverk."
           },
           {
-            title: "Kurerad Verktygskatalog",
+            title: "Kurerad verktygskatalog",
             description: "Recensioner och guider för externa plattformar som Loomio (beslutsfattande), Cobudget (deltagande budgetering) och andra samarbetsverktyg med öppen källkod."
           }
         ]
       },
       contribute: {
-        title: "Hjälp Till Att Bygga Detta",
+        title: "Hjälp till att bygga detta",
         text: "Har du en mall, verktyg eller arbetsblad som fungerat bra för din gemenskap? Vi skulle älska att inkludera det i verktygslådan.",
         button: "Bidra på GitHub"
       }
@@ -75,12 +76,12 @@
   $: t = translations[$currentLanguage] || translations.en;
 </script>
 
-<svelte:head>
-  <title>{t.title} | Communize</title>
-  <meta name="description" content={t.subtitle} />
-</svelte:head>
-
 {#key $currentLanguage}
+<SEO
+  title={t.title}
+  description={t.subtitle}
+  keywords="commons toolkit, resource mapping, community tools, worksheets, templates"
+/>
 <div class="min-h-screen" in:fade>
   <div class="max-w-5xl mx-auto px-4 py-16">
     <!-- Header -->

@@ -3,6 +3,8 @@
   import { fade } from 'svelte/transition';
   import languageStore from '$lib/stores/languageStore';
   import { base } from '$app/paths';
+  import SEO from '$lib/components/SEO.svelte';
+  import ShareButtons from '$lib/components/ShareButtons.svelte';
 
   $: currentLanguage = languageStore.language;
   
@@ -36,50 +38,59 @@
         comingSoon: "Coming soon",
         description: "Practical exercises for inner integration and self-commoning will be added in future phases."
       },
-     back: "Back to all scales"
+      back: "Back to all scales",
+      share: {
+        title: "Inner Commons - The Community Within | Communize",
+        description: "Explore how we create shared space within—integrating our parts, embracing our shadows, and cultivating self-compassion."
+      }
     },
     sv: {
-      title: "Inre Allmänningar",
-      subtitle: "Gemenskapen Inom",
+      title: "Inre allmänningar",
+      subtitle: "Gemenskapen inom",
       intro: "Innan vi kan kommunicera med andra måste vi lära oss att kommunicera med oss själva. De Inre Allmänningarna utforskar hur vi skapar delat utrymme inom—integrera våra delar, omfamna våra skuggor och odla självmedkänsla som grund för alla andra former av kommunisering.",
       essays: {
-        title: "Grundläggande Essäer",
+        title: "Grundläggande essäer",
         items: [
           {
-            title: "Självets Gemenskap",
+            title: "Självets gemenskap",
             description: "En introduktion till att se psyket som en intern gemenskap, med utgångspunkt i Internal Family Systems och delsarbete.",
             slug: "community-of-self"
           },
           {
-            title: "Skuggan som Exil",
+            title: "Skuggan som exil",
             description: "Hur de delar av oss själva vi förkastar blir förvisade—och hur välkomnandet av dem tillbaka är en handling av inre kommunisering.",
             slug: "shadow-as-exile"
           },
           {
-            title: "Självmedkänsla som Kommunisering",
+            title: "Självmedkänsla som kommunisering",
             description: "Att utforska hur vi behandlar oss själva med vänlighet speglar principerna för att skapa och upprätthålla allmänningar.",
             slug: "self-compassion"
           }
         ]
       },
       practices: {
-        title: "Praktiker & Utforskningar",
+        title: "Praktiker och utforskningar",
         comingSoon: "Kommer snart",
         description: "Praktiska övningar för inre integration och själv-kommunisering kommer att läggas till i framtida faser."
       },
-     back: "Tillbaka till alla skalor"
+      back: "Tillbaka till alla skalor",
+      share: {
+        title: "Inre allmänningar - Gemenskapen inom | Communize",
+        description: "Utforska hur vi skapar delat utrymme inom—integrera våra delar, omfamna våra skuggor och odla självmedkänsla."
+      }
     }
   };
 
   $: t = translations[$currentLanguage] || translations.en;
 </script>
 
-<svelte:head>
-  <title>{t.title} | Communize</title>
-  <meta name="description" content={t.subtitle} />
-</svelte:head>
-
 {#key $currentLanguage}
+<SEO
+  title={t.title}
+  description={t.intro}
+  keywords="inner commons, self-compassion, shadow work, internal family systems, self-integration"
+  section={currentLanguage === 'en' ? 'Inner Commons' : 'Inre Allmänningar'}
+/>
 <div class="min-h-screen" in:fade>
   <div class="max-w-4xl mx-auto px-4 py-16">
     <!-- Header -->
@@ -159,3 +170,8 @@
   </div>
 </div>
 {/key}
+
+<ShareButtons 
+  title={t.share.title}
+  description={t.share.description}
+/>

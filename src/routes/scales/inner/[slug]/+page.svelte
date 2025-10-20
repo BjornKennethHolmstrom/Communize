@@ -3,6 +3,8 @@
   import { fade } from 'svelte/transition';
   import languageStore from '$lib/stores/languageStore';
   import { base } from '$app/paths';
+  import SEO from '$lib/components/SEO.svelte';
+  import ShareButtons from '$lib/components/ShareButtons.svelte';
 
   const { language } = languageStore;
   
@@ -24,15 +26,16 @@
   const t = $derived(translations[$language] || translations.en);
 </script>
 
-<svelte:head>
-  <title>{data.metadata.title} | {t.innerCommons} | Communize</title>
-  <meta name="description" content={data.metadata.subtitle} />
-  <meta name="author" content={data.metadata.author} />
-  <meta property="og:title" content={data.metadata.title} />
-  <meta property="og:description" content={data.metadata.subtitle} />
-</svelte:head>
-
 <div class="min-h-screen" in:fade>
+  <SEO
+    title={data.metadata.title}
+    description={data.metadata.subtitle}
+    type="article"
+    author={data.metadata.author}
+    publishedTime={data.metadata.date}
+    section={t.innerCommons}
+    keywords="inner commons, self-work, communizing, personal transformation"
+  />
   <div class="max-w-4xl mx-auto px-4 py-16">
     
     <!-- Fallback notice if showing English when Swedish is selected -->
@@ -88,6 +91,11 @@
     <article class="prose prose-lg prose-earth max-w-none">
       <svelte:component this={data.content} />
     </article>
+
+    <ShareButtons 
+      title={data.metadata.title}
+      description={data.metadata.subtitle}
+    />
 
     <!-- Back Navigation -->
     <footer class="mt-16 pt-8 border-t border-earth-200">

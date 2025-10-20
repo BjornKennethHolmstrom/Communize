@@ -10,22 +10,22 @@
     "about": "Om"
   },
   "scales": {
-    "inner": "Inre Allmänningar",
-    "relational": "Relationella Allmänningar",
-    "societal": "Samhälleliga Allmänningar",
-    "planetary": "Planetära Allmänningar"
+    "inner": "Inre allmänningar",
+    "relational": "Relationella allmänningar",
+    "societal": "Samhälleliga allmänningar",
+    "planetary": "Planetära allmänningar"
   },
   "hero": {
-    "title": "Från Isolering till Gemenskap",
+    "title": "Från isolering till gemenskap",
     "subtitle": "Att utforska processen av att kommunisera—att bygga gemenskap och skapa allmänningar",
-    "cta": "Börja Utforska"
+    "cta": "Börja utforska"
   },
   "manifesto": {
     "quote": "Vi lever i en tid av djup isolering—trots att vi är mer \"uppkopplade\" än någonsin. Communize är en inbjudan att delta i vår tids stora verk: att väva samman det sociala tyget igen.",
     "body": "Detta är ett upprop att röra oss från en värld av \"jag\" till en värld av \"vi\"—inte genom att förlora jaget, utan genom att finna det i ett vidare sammanhang av tillhörighet och ömsesidig omsorg. Det är både uråldrig visdom och brådskande nödvändighet: insikten att vi blomstrar tillsammans, eller inte alls."
   },
   "scalesSection": {
-    "title": "De Fyra Skalorna av Kommunisering",
+    "title": "De fyra skalorna av kommunisering",
     "subtitle": "Från det inre landskapet av självet till de planetära allmänningarna, utforskar vi hur tillhörighet manifesteras på varje nivå av existens.",
     "inner": {
       "description": "Integration inom—att kommunisera psyket, delar av självet, och den inre ekologin av tillhörighet."
@@ -41,7 +41,7 @@
     }
   },
   "trilogy": {
-    "title": "En Komplett Karta över Mänskligt Blomstrande",
+    "title": "En komplett karta över mänskligt blomstrande",
     "subtitle": "Communize fullbordar en trilogi av utforskningar: från uppvaknande till förståelse till förkroppsligande i gemenskap.",
     "nondualize": {
       "subtitle": "Varande",
@@ -60,10 +60,10 @@
     }
   },
   "cta": {
-    "title": "Gå med i Processen",
+    "title": "Gå med i processen",
     "description": "Detta projekt frodas på kollektiv intelligens. Allt innehåll är öppen källkod och byggs gemensamt. Dina insikter, erfarenheter och bidrag hjälper till att expandera allmänningarna.",
     "github": "Bidra på GitHub",
-    "contact": "Hör av Dig"
+    "contact": "Hör av dig"
   },
   "footer": {
     "license": "Innehåll delat under CC BY-SA 4.0",
@@ -80,7 +80,7 @@
       "Från psykologin av tillhörighet till strukturer för samarbete, från forntida allmänningar till digitala kooperativ, studerar och delar vi modeller som gör det möjligt för människor att förvalta delade resurser och blomstra tillsammans."
     ],
     "philosophy": {
-      "title": "Vår Filosofi",
+      "title": "Vår filosofi",
       "points": [
         "Helt gratis och öppen källkod—inga betalväggar, ingen spårning",
         "Statisk och enkel—bara idéer och resurser",
@@ -90,7 +90,7 @@
       ]
     },
     "ecosystem": {
-      "title": "Del av ett Ekosystem",
+      "title": "Del av ett ekosystem",
       "description": "Communize är en del av en familj av webbplatser som utforskar mänskligt medvetande och social evolution:",
       "nondualize": {
         "subtitle": "Varande",
@@ -114,12 +114,12 @@
       }
     },
     "author": {
-      "title": "Om Skaparen",
+      "title": "Om skaparen",
       "text": "Communize skapas av Björn Kenneth Holmström, som utforskar skärningspunkten mellan medvetandeutveckling, sociala system och kollektiv visdom.",
       "link": "Besök personlig webbplats"
     },
     "openSource": {
-      "title": "Öppen Källkod & Kollaborativ",
+      "title": "Öppen källkod & kollaborativ",
       "text": "Detta projekt trivs på kollektiv intelligens. Allt innehåll är licensierat under Creative Commons (CC BY-SA 4.0) och koden är MIT-licensierad. Bidrag är välkomna!",
       "github": "Visa på GitHub"
     }
