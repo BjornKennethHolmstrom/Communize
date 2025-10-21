@@ -7,7 +7,6 @@
 		"dev": "vite dev",
 		"generate-pdfs": "node scripts/generate-pdfs.cjs",
 		"build": "npm run vite build",
-		"prebuild": "npm run generate-pdfs",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
