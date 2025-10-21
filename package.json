@@ -5,7 +5,9 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
-		"build": "vite build",
+		"generate-pdfs": "node scripts/generate-pdfs.cjs",
+		"build": "npm run generate-pdfs && vite build",
+		"prebuild": "npm run generate-pdfs",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -40,6 +42,7 @@
 	},
 	"dependencies": {
 		"fade": "^0.2.0",
+		"md-to-pdf": "^5.2.4",
 		"svelte-i18n": "^4.0.1"
 	}
 }
