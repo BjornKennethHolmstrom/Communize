@@ -6,7 +6,7 @@
 	"scripts": {
 		"dev": "vite dev",
 		"generate-pdfs": "node scripts/generate-pdfs.cjs",
-		"build": "npm run generate-pdfs && vite build",
+		"build": "npm run vite build",
 		"prebuild": "npm run generate-pdfs",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
