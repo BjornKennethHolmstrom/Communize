@@ -1,235 +1,342 @@
 <!-- /src/routes/library/+page.svelte -->
 <script lang="ts">
   import { fade } from 'svelte/transition';
+  import { base } from '$app/paths';
   import languageStore from '$lib/stores/languageStore';
   import SEO from '$lib/components/SEO.svelte';
 
-  $: currentLanguage = languageStore.language;
+  const { language } = languageStore;
+  const currentLanguage = $derived($language);
   
   const translations = {
     en: {
-      title: "Models & Praxis Library",
-      subtitle: "Case studies and practical guides for communizing",
-      intro: "The library will be a curated collection of real-world examples—from thriving ecovillages to worker cooperatives, from neighborhood tool libraries to digital commons platforms.",
-      comingSoon: "Coming in Phase 2",
-      plannedContent: {
-        title: "What's Coming",
-        categories: [
-          {
-            title: "Local Models",
-            icon: "🏘️",
-            examples: [
-              "Housing cooperatives",
-              "Community land trusts",
-              "Tool libraries and repair cafés",
-              "Time banking systems",
-              "Neighborhood mutual aid networks"
-            ]
-          },
-          {
-            title: "Digital Commons",
-            icon: "💻",
-            examples: [
-              "Open-source software collectives",
-              "Platform cooperatives",
-              "Federated social networks",
-              "Community data trusts",
-              "Wikipedia and knowledge commons"
-            ]
-          },
-          {
-            title: "Ecological Models",
-            icon: "🌱",
-            examples: [
-              "Community gardens and food forests",
-              "Watershed councils",
-              "Bioregional governance",
-              "Community-supported agriculture",
-              "Rewilding collectives"
-            ]
-          },
-          {
-            title: "Governance Patterns",
-            icon: "⚖️",
-            examples: [
-              "Sociocracy and consent-based decision making",
-              "Participatory budgeting",
-              "Rotating leadership models",
-              "Indigenous governance structures",
-              "Conflict transformation practices"
-            ]
-          }
-        ]
+      title: "Models & praxis library",
+      subtitle: "Real-world case studies and practical guides for communizing",
+      intro: "Learn from communities, cooperatives, and commons around the world that are actively building shared ownership, collective responsibility, and regenerative systems.",
+      
+      filters: {
+        all: "All models",
+        local: "Local models",
+        digital: "Digital commons",
+        ecological: "Ecological models",
+        governance: "Governance patterns"
       },
-      practicalGuides: {
-        title: "Step-by-Step Guides",
-        description: "Each case study will include practical guidance:",
-        items: [
-          "How it started and evolved",
-          "Key principles and structures",
-          "What worked and what didn't",
-          "Resources and templates used",
-          "How to adapt it to your context"
-        ]
-      },
+      
+      caseCount: "{count} case studies",
+      readMore: "Read case study",
+      location: "Location",
+      founded: "Founded",
+      scale: "Scale",
+      type: "Type",
+      
       contribute: {
-        title: "Share Your Story",
+        title: "Share your story",
         text: "Are you part of a thriving commons? Have you started a cooperative, community garden, or mutual aid network? We'd love to feature your story in the library.",
-        button: "Submit a Case Study"
-      }
+        button: "Submit a case study"
+      },
+      
+      comingSoon: "More case studies coming soon"
     },
     sv: {
       title: "Modeller och praxis bibliotek",
-      subtitle: "Fallstudier och praktiska guider för kommunisering",
-      intro: "Biblioteket kommer att vara en kurerad samling av verkliga exempel—från blomstrande ekobyar till arbetarkooperativ, från grannverktygsbibliotek till digitala allmänningsplattformar.",
-      comingSoon: "Kommer i Fas 2",
-      plannedContent: {
-        title: "Vad som kommer",
-        categories: [
-          {
-            title: "Lokala modeller",
-            icon: "🏘️",
-            examples: [
-              "Bostadskooperativ",
-              "Samhällsmarkstiftelser",
-              "Verktygsbibliotek och reparationscaféer",
-              "Tidsbankssystem",
-              "Grannskap ömsesidig hjälpnätverk"
-            ]
-          },
-          {
-            title: "Digitala allmänningar",
-            icon: "💻",
-            examples: [
-              "Öppen källkod-kollektiv",
-              "Plattformskooperativ",
-              "Federerade sociala nätverk",
-              "Gemenskapsdatastiftelser",
-              "Wikipedia och kunskapsallmänningar"
-            ]
-          },
-          {
-            title: "Ekologiska modeller",
-            icon: "🌱",
-            examples: [
-              "Gemenskapsträdgårdar och matskogar",
-              "Vattendelarråd",
-              "Bioregional styrning",
-              "Gemenskapsstödd jordbruk",
-              "Återvildningskollektiv"
-            ]
-          },
-          {
-            title: "Styrningsmönster",
-            icon: "⚖️",
-            examples: [
-              "Sociokrati och samtycksbaserat beslutsfattande",
-              "Deltagande budgetering",
-              "Roterande ledarskapsmodeller",
-              "Urfolksstyrningsstrukturer",
-              "Konflikttransformationspraxis"
-            ]
-          }
-        ]
+      subtitle: "Verkliga fallstudier och praktiska guider för kommunisering",
+      intro: "Lär av gemenskaper, kooperativ och allmänningar runt om i världen som aktivt bygger delat ägande, kollektivt ansvar och regenerativa system.",
+      
+      filters: {
+        all: "Alla modeller",
+        local: "Lokala modeller",
+        digital: "Digitala allmänningar",
+        ecological: "Ekologiska modeller",
+        governance: "Styrningsmönster"
       },
-      practicalGuides: {
-        title: "Steg-för-steg guider",
-        description: "Varje fallstudie kommer att innehålla praktisk vägledning:",
-        items: [
-          "Hur det började och utvecklades",
-          "Nyckelprinciper och strukturer",
-          "Vad som fungerade och inte fungerade",
-          "Resurser och mallar som användes",
-          "Hur man anpassar det till ditt sammanhang"
-        ]
-      },
+      
+      caseCount: "{count} fallstudier",
+      readMore: "Läs fallstudie",
+      location: "Plats",
+      founded: "Grundad",
+      scale: "Skala",
+      type: "Typ",
+      
       contribute: {
         title: "Dela din historia",
         text: "Är du en del av en blomstrande allmänning? Har du startat ett kooperativ, gemenskapsträdgård eller ömsesidig hjälpnätverk? Vi skulle älska att presentera din historia i biblioteket.",
         button: "Skicka in en fallstudie"
-      }
+      },
+      
+      comingSoon: "Fler fallstudier kommer snart"
     }
   };
 
-  $: t = translations[$currentLanguage] || translations.en;
+  const t = $derived(translations[currentLanguage] || translations.en);
+  
+  // Case studies data
+  const caseStudies = [
+    {
+      id: 'park-slope-food-coop',
+      title: {
+        en: 'Park Slope Food Coop',
+        sv: 'Park Slope Food Coop'
+      },
+      tagline: {
+        en: 'Member-owned grocery cooperative in Brooklyn, New York',
+        sv: 'Medlemsägt livsmedelkooperativ i Brooklyn, New York'
+      },
+      location: 'Brooklyn, New York, USA',
+      founded: 1973,
+      category: 'local',
+      scale: {
+        en: '17,000+ members',
+        sv: '17 000+ medlemmar'
+      },
+      type: {
+        en: 'Food cooperative',
+        sv: 'Livsmedelskooperativ'
+      },
+      image: '/images/case-studies/park-slope-food-coop.jpg',
+      excerpt: {
+        en: 'One of the oldest and largest food cooperatives in the US, demonstrating how member labor and democratic governance can create affordable, sustainable food access.',
+        sv: 'Ett av de äldsta och största livsmedelskooperativen i USA, som visar hur medlemsarbete och demokratisk styrning kan skapa prisvärd, hållbar mattillgång.'
+      },
+      tags: ['cooperative', 'food', 'urban', 'democratic-governance']
+    },
+    {
+      id: 'wikipedia',
+      title: {
+        en: 'Wikipedia',
+        sv: 'Wikipedia'
+      },
+      tagline: {
+        en: 'The free encyclopedia that anyone can edit',
+        sv: 'Den fria encyklopedin som vem som helst kan redigera'
+      },
+      location: 'Global / Online',
+      founded: 2001,
+      category: 'digital',
+      scale: {
+        en: '300,000+ active editors',
+        sv: '300 000+ aktiva redaktörer'
+      },
+      type: {
+        en: 'Knowledge commons',
+        sv: 'Kunskapsallmänning'
+      },
+      image: '/images/case-studies/wikipedia.jpg',
+      excerpt: {
+        en: 'The largest and most successful example of digital commons—a freely accessible knowledge repository built entirely by volunteers using collective ownership and transparent governance.',
+        sv: 'Det största och mest framgångsrika exemplet på digitala allmänningar—en fritt tillgänglig kunskapsreservoar byggd helt av frivilliga med kollektivt ägande och transparent styrning.'
+      },
+      tags: ['digital', 'knowledge', 'global', 'open-source']
+    },
+    {
+      id: 'transition-town-totnes',
+      title: {
+        en: 'Transition Town Totnes',
+        sv: 'Transition Town Totnes'
+      },
+      tagline: {
+        en: 'Community-led movement for local resilience and ecological regeneration',
+        sv: 'Gemenskapslett rörelse för lokal motståndskraft och ekologisk regenerering'
+      },
+      location: 'Totnes, Devon, UK',
+      founded: 2006,
+      category: 'ecological',
+      scale: {
+        en: '2,000+ active participants',
+        sv: '2 000+ aktiva deltagare'
+      },
+      type: {
+        en: 'Transition initiative',
+        sv: 'Omställningsinitiativ'
+      },
+      image: '/images/case-studies/transition-totnes.jpg',
+      excerpt: {
+        en: 'The original Transition Town, pioneering community-led responses to climate change and peak oil through local food systems, renewable energy, and community economics.',
+        sv: 'Den ursprungliga Transition Town, som pionjärar gemenskapsledda svar på klimatförändring och peak oil genom lokala matsystem, förnybar energi och gemenkapsekonomi.'
+      },
+      tags: ['ecological', 'resilience', 'local-economy', 'permaculture']
+    },
+    {
+      id: 'rojava',
+      title: {
+        en: 'Rojava Democratic Confederalism',
+        sv: 'Rojava demokratisk konfederalism'
+      },
+      tagline: {
+        en: 'Autonomous democratic governance experiment in Northern Syria',
+        sv: 'Autonomt demokratiskt styrningsexperiment i norra Syrien'
+      },
+      location: 'Rojava, Northern Syria',
+      founded: 2012,
+      category: 'governance',
+      scale: {
+        en: '4+ million people',
+        sv: '4+ miljoner människor'
+      },
+      type: {
+        en: 'Democratic confederalism',
+        sv: 'Demokratisk konfederalism'
+      },
+      image: '/images/case-studies/rojava.jpg',
+      excerpt: {
+        en: 'A bold experiment in grassroots democracy, women\'s liberation, and ecological society—demonstrating how communities can self-organize governance at scale through bottom-up councils and consensus.',
+        sv: 'Ett djärvt experiment i gräsrotsdemokrati, kvinnofrigörelse och ekologiskt samhälle—som visar hur gemenskaper kan självorganisera styrning i stor skala genom bottom-up-råd och konsensus.'
+      },
+      tags: ['governance', 'democracy', 'autonomy', 'feminism']
+    }
+    // More case studies will be added here
+  ];
+  
+  let selectedCategory = $state<string>('all');
+  
+  const filteredStudies = $derived(
+    selectedCategory === 'all' 
+      ? caseStudies 
+      : caseStudies.filter(s => s.category === selectedCategory)
+  );
+  
+  function getCategoryColor(category: string): string {
+    const colors = {
+      local: 'bg-moss-100 text-moss-800 border-moss-300',
+      digital: 'bg-earth-100 text-earth-800 border-earth-300',
+      ecological: 'bg-clay-100 text-clay-800 border-clay-300',
+      governance: 'bg-amber-100 text-amber-800 border-amber-300'
+    };
+    return colors[category] || 'bg-gray-100 text-gray-800 border-gray-300';
+  }
 </script>
 
-{#key $currentLanguage}
+{#key $language}
 <SEO
   title={t.title}
   description={t.subtitle}
-  keywords="commons models, case studies, cooperatives, ecovillages, practical guides"
+  keywords="commons case studies, cooperatives, community models, praxis library"
 />
 
 <div class="min-h-screen" in:fade>
-  <div class="max-w-6xl mx-auto px-4 py-16">
+  <div class="max-w-7xl mx-auto px-4 py-16">
     <!-- Header -->
     <div class="text-center mb-12">
-      <div class="inline-block px-4 py-2 bg-clay-100 text-clay-700 rounded-full text-sm font-medium mb-4">
-        {t.comingSoon}
-      </div>
       <h1 class="text-4xl md:text-5xl font-serif mb-4 text-earth-900">
         {t.title}
       </h1>
-      <p class="text-xl text-earth-600 font-light max-w-2xl mx-auto">
+      <p class="text-xl text-earth-600 font-light max-w-2xl mx-auto mb-6">
         {t.subtitle}
       </p>
-    </div>
-
-    <!-- Introduction -->
-    <div class="mb-12 p-8 bg-moss-50 rounded-xl">
-      <p class="text-lg leading-relaxed text-earth-700">
+      <p class="text-earth-700 max-w-3xl mx-auto">
         {t.intro}
       </p>
     </div>
 
-    <!-- Categories Grid -->
-    <div class="mb-12">
-      <h2 class="text-2xl font-serif mb-6 text-earth-900">
-        {t.plannedContent.title}
-      </h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        {#each t.plannedContent.categories as category}
-          <div class="bg-white rounded-lg p-6 border-2 border-earth-200">
-            <div class="flex items-center gap-3 mb-4">
-              <span class="text-3xl">{category.icon}</span>
-              <h3 class="text-xl font-serif text-earth-900">
-                {category.title}
-              </h3>
-            </div>
-            <ul class="space-y-2">
-              {#each category.examples as example}
-                <li class="flex items-start text-earth-700 text-sm">
-                  <span class="text-moss-600 mr-2">•</span>
-                  <span>{example}</span>
-                </li>
-              {/each}
-            </ul>
-          </div>
-        {/each}
-      </div>
+    <!-- Category Filter -->
+    <div class="mb-8 flex flex-wrap gap-3 justify-center">
+      {#each Object.entries(t.filters) as [key, label]}
+        <button
+          onclick={() => selectedCategory = key}
+          class="px-4 py-2 rounded-lg transition-all {
+            selectedCategory === key
+              ? 'bg-moss-600 text-white shadow-md'
+              : 'bg-white text-earth-700 hover:bg-moss-50 border border-earth-200'
+          }"
+        >
+          {label}
+        </button>
+      {/each}
     </div>
 
-    <!-- Practical Guides Section -->
-    <div class="mb-12 bg-earth-50 rounded-xl p-8">
-      <h2 class="text-2xl font-serif mb-4 text-earth-900">
-        {t.practicalGuides.title}
-      </h2>
-      <p class="text-earth-700 mb-4">
-        {t.practicalGuides.description}
+    <!-- Results count -->
+    <div class="text-center mb-8 text-sm text-earth-600">
+      {t.caseCount.replace('{count}', filteredStudies.length.toString())}
+    </div>
+
+    <!-- Case Studies Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+      {#each filteredStudies as study (study.id)}
+        <article class="bg-white rounded-xl shadow-lg overflow-hidden border-2 border-earth-200 hover:border-moss-300 transition-all group">
+          <!-- Image placeholder -->
+          <div class="h-48 bg-gradient-to-br from-moss-100 to-earth-100 flex items-center justify-center">
+            <svg class="w-16 h-16 text-moss-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          
+          <div class="p-6">
+            <!-- Category badge -->
+            <div class="mb-3">
+              <span class="px-2 py-1 text-xs rounded-full border {getCategoryColor(study.category)}">
+                {t.filters[study.category]}
+              </span>
+            </div>
+            
+            <!-- Title -->
+            <h3 class="text-xl font-serif text-earth-900 mb-2 group-hover:text-moss-700 transition-colors">
+              {study.title[currentLanguage]}
+            </h3>
+            
+            <!-- Tagline -->
+            <p class="text-sm text-earth-600 mb-4">
+              {study.tagline[currentLanguage]}
+            </p>
+            
+            <!-- Meta info -->
+            <div class="space-y-1 text-xs text-earth-600 mb-4">
+              <div class="flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <span>{study.location}</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                <span>{t.founded}: {study.founded}</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
+                </svg>
+                <span>{study.scale[currentLanguage]}</span>
+              </div>
+            </div>
+            
+            <!-- Excerpt -->
+            <p class="text-sm text-earth-700 mb-4 line-clamp-3">
+              {study.excerpt[currentLanguage]}
+            </p>
+            
+            <!-- Read more link -->
+            <a 
+              href="{base}/library/{study.id}"
+              class="inline-flex items-center gap-2 text-moss-600 hover:text-moss-700 font-medium text-sm group-hover:gap-3 transition-all"
+            >
+              <span>{t.readMore}</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </article>
+      {/each}
+    </div>
+
+    <!-- Coming soon message -->
+    <div class="text-center py-12">
+      <div class="inline-block px-6 py-3 bg-clay-100 text-clay-700 rounded-lg text-sm font-medium mb-4">
+        {t.comingSoon}
+      </div>
+      <p class="text-earth-600 max-w-md mx-auto">
+        {currentLanguage === 'en' 
+          ? 'We\'re continuously researching and documenting inspiring examples of communizing in action.' 
+          : 'Vi forskar kontinuerligt och dokumenterar inspirerande exempel på kommunisering i praktiken.'}
       </p>
-      <ul class="space-y-2">
-        {#each t.practicalGuides.items as item}
-          <li class="flex items-start text-earth-700">
-            <span class="text-moss-600 mr-3">✓</span>
-            <span>{item}</span>
-          </li>
-        {/each}
-      </ul>
     </div>
 
     <!-- Contribute Section -->
     <div class="bg-gradient-to-br from-moss-50 to-clay-50 rounded-xl p-8 text-center">
+      <svg class="w-12 h-12 text-moss-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+      </svg>
       <h2 class="text-2xl font-serif mb-4 text-earth-900">
         {t.contribute.title}
       </h2>
@@ -251,3 +358,12 @@
   </div>
 </div>
 {/key}
+
+<style>
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
