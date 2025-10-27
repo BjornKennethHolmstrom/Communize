@@ -238,6 +238,6 @@
       </a>
     </div>
   </div>
-
+  <br>
   <ShareButtons />
 </section>
