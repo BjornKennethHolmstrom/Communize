@@ -2,6 +2,7 @@
 <script lang="ts">
   import { _ } from 'svelte-i18n';
   import { base } from '$app/paths';
+  import ShareButtons from '$lib/components/ShareButtons.svelte';
 </script>
 
 <!-- Hero Section -->
@@ -237,4 +238,6 @@
       </a>
     </div>
   </div>
+
+  <ShareButtons />
 </section>
