@@ -46,6 +46,9 @@
         <a href="{base}/about" class="text-earth-700 hover:text-moss-600 font-medium">
           {$_('nav.about')}
         </a>
+        <a href="{base}/support" class="text-earth-700 hover:text-moss-600 font-medium">
+          {$_('nav.support')}
+        </a>
         
         <!-- Language switcher -->
         <button
@@ -91,6 +94,9 @@
           </a>
           <a href="{base}/about" class="text-earth-700 hover:text-moss-600 font-medium py-2">
             {$_('nav.about')}
+          </a>
+          <a href="{base}/support" class="text-earth-700 hover:text-moss-600 font-medium py-2">
+            {$_('nav.support')}
           </a>
           <button
             onclick={toggleLanguage}
