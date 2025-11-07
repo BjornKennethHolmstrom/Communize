@@ -168,7 +168,7 @@
         {$_('about.author.text')}
       </p>
       <a
-        href="https://bjornkennethholmstrom.wordpress.com/"
+        href="https://bjornkennethholmstrom.org/"
         target="_blank"
         rel="noopener"
         class="inline-block px-6 py-3 bg-earth-700 hover:bg-earth-800 text-white rounded-lg transition-colors"
