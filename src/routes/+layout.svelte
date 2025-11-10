@@ -18,17 +18,28 @@
     waitLocale().then(() => {
       isLoaded = true;
     });
+
+    // Register service worker for PWA functionality
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./service-worker.js')
+        .then(registration => {
+          console.log('Service Worker registered successfully:', registration.scope);
+        })
+        .catch(error => {
+          console.log('Service Worker registration failed:', error);
+        });
+    }
   });
 
   const currentLanguage = $derived($language);
   
   const metaTitle = $derived('Communize - ' + (currentLanguage === 'en' 
     ? 'Cultivating the art and architecture of belonging'
-    : 'Att odla konsten och arkitekturen av tillhörighet'));
+    : 'Att odla konsten och arkitekturen av tillhÃ¶righet'));
 
   const metaDescription = $derived(currentLanguage === 'en'
-    ? 'Exploring the process of communizing—building community and creating the commons'
-    : 'Att utforska processen av att kommunisera—att bygga gemenskap och skapa allmänningar');
+    ? 'Exploring the process of communizingâ€”building community and creating the commons'
+    : 'Att utforska processen av att kommuniseraâ€”att bygga gemenskap och skapa allmÃ¤nningar');
 </script>
 
 <svelte:head>
@@ -57,9 +68,9 @@
     <a 
       href="#main-content"
       class="skip-link"
-      aria-label={currentLanguage === 'en' ? 'Skip to main content' : 'Hoppa till huvudinnehåll'}
+      aria-label={currentLanguage === 'en' ? 'Skip to main content' : 'Hoppa till huvudinnehÃ¥ll'}
     >
-      {currentLanguage === 'en' ? 'Skip to main content' : 'Hoppa till huvudinnehåll'}
+      {currentLanguage === 'en' ? 'Skip to main content' : 'Hoppa till huvudinnehÃ¥ll'}
     </a>
 
     <Header />
